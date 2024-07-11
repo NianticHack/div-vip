@@ -112,6 +112,7 @@ RegisterNetEvent('open:vipefnam', function()
                 icon = 'fa-solid fa-heart-pulse',
                 disabled = disablekan,
                 onSelect = function()
+		    if not userData.canClaim then return end
                     userData.canClaim = false
                     local year, month, day, hour, minute, second = GetLocalTime()
                     userData.lastClaimed = DateToTime(day, hour, minute, second)
