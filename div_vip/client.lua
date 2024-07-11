@@ -78,7 +78,11 @@ RegisterNetEvent('open:vipefnam', function()
 
     if vip then
         dahada = true
-        disablekan = false
+	if userData.canClaim then		
+           disablekan = false
+	else
+	   disablekan = true
+	end
     else
         dahada = false
         disablekan = true
